@@ -7,9 +7,9 @@ formEl.addEventListener('submit', onSubmit);
 function onSubmit(e) {
   e.preventDefault();
   const { delay, step, amount } = e.currentTarget;
-  let position = Number(amount.value);
+  const position = Number(amount.value);
   let firstDelay = Number(delay.value);
-  let stepDelay = Number(step.value);
+  const stepDelay = Number(step.value);
   for (let i = 1; i <= position; i += 1) {
     createPromise(i, firstDelay);
     firstDelay += stepDelay;
