@@ -1,7 +1,6 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix';
-import '../../node_modules/notiflix/dist/notiflix-3.2.5.min.css';
 
 const ref = {
   input: document.querySelector('#datetime-picker'),
@@ -26,6 +25,7 @@ const options = {
     }
   },
 };
+
 flatpickr(ref.input, options);
 ref.btnStart.setAttribute('disabled', true);
 
