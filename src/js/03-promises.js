@@ -10,6 +10,7 @@ function onSubmit(e) {
   const position = Number(amount.value);
   let firstDelay = Number(delay.value);
   const stepDelay = Number(step.value);
+
   for (let i = 1; i <= position; i += 1) {
     createPromise(i, firstDelay);
     firstDelay += stepDelay;
@@ -34,5 +35,6 @@ function createPromise(position, delay) {
     })
     .catch(() => {
       Notiflix, Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
-    });
+    })
+    .finally(() => formEl.reset());
 }
